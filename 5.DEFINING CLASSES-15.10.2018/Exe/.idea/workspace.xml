@@ -11,21 +11,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="01.ClassBox.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="01.ClassBox.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/01.ClassBox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="49" column="30" lean-forward="true" selection-end-line="98" />
+            <state relative-caret-position="173">
+              <caret line="84" column="5" lean-forward="true" selection-end-line="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02.ClassBoxValidation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/02.ClassBoxValidation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>33</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/01.ClassBox.php" />
+        <option value="$PROJECT_DIR$/02.ClassBoxValidation.php" />
       </list>
     </option>
   </component>
@@ -83,10 +98,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.02.ClassBoxValidation.php">
     <configuration name="01.ClassBox.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/01.ClassBox.php" />
+    <configuration name="02.ClassBoxValidation.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/02.ClassBoxValidation.php" />
+    <list>
+      <item itemvalue="PHP Script.01.ClassBox.php" />
+      <item itemvalue="PHP Script.02.ClassBoxValidation.php" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.02.ClassBoxValidation.php" />
         <item itemvalue="PHP Script.01.ClassBox.php" />
       </list>
     </recent_temporary>
@@ -101,16 +122,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539756443804</updated>
-      <workItem from="1539756447338" duration="1677000" />
+      <workItem from="1539756447338" duration="4176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1677000" />
+    <option name="totallyTimeSpent" value="4176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -142,8 +162,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/01.ClassBox.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="49" column="30" lean-forward="true" selection-end-line="98" />
+        <state relative-caret-position="173">
+          <caret line="84" column="5" lean-forward="true" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02.ClassBoxValidation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
         </state>
       </provider>
     </entry>

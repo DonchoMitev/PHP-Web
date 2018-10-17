@@ -83,7 +83,7 @@ class Box {
 
     public function __toString()
     {
-        return "Surface Area – " . $this->surfaceArea() . PHP_EOL .
+        return "Surface Area - " . $this->surfaceArea() . PHP_EOL .
                 "Lateral Surface Area - " . $this->lateralArea() .PHP_EOL.
                 "Volume - ". $this->volume();
     }
