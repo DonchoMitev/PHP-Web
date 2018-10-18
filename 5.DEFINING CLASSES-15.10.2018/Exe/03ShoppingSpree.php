@@ -1,6 +1,6 @@
 <?php
 
-class Person {
+class People {
     /**
      * @var string
      */
@@ -177,7 +177,7 @@ for ($i = 0; $i < count($personData) - 1; $i+=2){
         $name = $personData[$i];
         $money = floatval($personData[$i+1]);
 
-        $person[$name] = new Person($name, $money);
+        $person[$name] = new People($name, $money);
 
 //        if (!array_key_exists($name, $person)){
 //            $person[$name] = $money;
