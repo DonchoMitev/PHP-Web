@@ -17,8 +17,4 @@ class SecurityController extends Controller
         return $this->render('security/login.html.twig');
     }
 
-    public function registerAction() {
-
-        $user = new User();
-    }
 }

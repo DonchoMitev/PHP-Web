@@ -2,7 +2,10 @@
 
 namespace SoftUniBlogBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +16,10 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email')->add('password')->add('fullName');
+        $builder
+            ->add('email', TextType::class)
+            ->add('password', TextType::class)
+            ->add('fullName', TextType::class);
     }/**
      * {@inheritdoc}
      */
@@ -23,14 +29,4 @@ class UserType extends AbstractType
             'data_class' => 'SoftUniBlogBundle\Entity\User'
         ));
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'softuniblogbundle_user';
-    }
-
-
 }
