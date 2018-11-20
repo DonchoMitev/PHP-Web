@@ -3,6 +3,7 @@
 namespace SoftUniBlogBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use SoftUniBlogBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SecurityController extends Controller
@@ -14,5 +15,10 @@ class SecurityController extends Controller
     public function loginAction()
     {
         return $this->render('security/login.html.twig');
+    }
+
+    public function registerAction() {
+
+        $user = new User();
     }
 }
