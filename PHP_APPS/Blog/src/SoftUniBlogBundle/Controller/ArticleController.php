@@ -7,6 +7,7 @@ namespace SoftUniBlogBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use SoftUniBlogBundle\Entity\Article;
+use SoftUniBlogBundle\Entity\User;
 use SoftUniBlogBundle\Form\ArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -65,6 +66,11 @@ class ArticleController extends Controller
         if ($article == null) {
             return $this->redirectToRoute("blog_index");
         }
+        /** @var User $currentUser */
+        $currentUser = $this->getUser();
+        if (!$currentUser->isAuthor($article) && !$currentUser->isAdmin()){
+            return $this->redirectToRoute("blog_index");
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $currentUser = $this->getUser();
@@ -94,6 +100,12 @@ class ArticleController extends Controller
         $form->handleRequest($request);
 
         if ($article == null) {
+            return $this->redirectToRoute("blog_index");
+        }
+
+        /** @var User $currentUser */
+        $currentUser = $this->getUser();
+        if (!$currentUser->isAuthor($article) && !$currentUser->isAdmin()){
             return $this->redirectToRoute("blog_index");
         }
 

@@ -74,6 +74,21 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @param Article $article
+     * @return bool
+     */
+    public function isAuthor(Article $article) {
+        return $article->getAuthorId() == $this->getId();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin() {
+        return in_array("ROLE_ADMIN", $this->getRoles());
+    }
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -201,7 +216,7 @@ class User implements UserInterface
 
         foreach ($this->roles as $role){
             /** @var Role $role */
-            $stringRoles[] = $role;
+            $stringRoles[] = $role->getRole();
         }
 
         return $stringRoles;
