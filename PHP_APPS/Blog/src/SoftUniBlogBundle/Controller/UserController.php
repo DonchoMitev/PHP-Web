@@ -4,6 +4,7 @@ namespace SoftUniBlogBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use SoftUniBlogBundle\Entity\Role;
 use SoftUniBlogBundle\Entity\User;
 use SoftUniBlogBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -25,6 +26,13 @@ class UserController extends Controller
         if ($form->isSubmitted()){
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
+
+            $role = $this->getDoctrine()
+                ->getRepository(Role::class)
+                ->findOneBy(['name' => 'ROLE_USER']);
+
+            $user->addRole($role);
+
             $user->setPassword($password);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
