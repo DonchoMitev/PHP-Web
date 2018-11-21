@@ -55,7 +55,7 @@ class ArticleController extends Controller
      */
     public function editAction(Request $request, $id)
     {
-        $article = new Article();
+        $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
@@ -70,6 +70,32 @@ class ArticleController extends Controller
         }
 
 
-        return $this->render('article/edit.html.twig', ['form' => $form->createView()]);
+        return $this->render('article/edit.html.twig', ['form' => $form->createView(), 'article' => $article]);
+    }
+
+    /**
+     * @Route("/article/delete/{id}", name="article_delete")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $currentUser = $this->getUser();
+            $article->setAuthor($currentUser);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($article);
+            $em->flush();
+
+            return $this->redirectToRoute("blog_index");
+        }
+
+
+        return $this->render('article/delete.html.twig', ['form' => $form->createView(), 'article' => $article]);
     }
 }
