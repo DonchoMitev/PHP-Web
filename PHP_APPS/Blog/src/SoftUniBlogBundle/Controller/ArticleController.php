@@ -46,4 +46,30 @@ class ArticleController extends Controller
        $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
         return $this->render("article/article.html.twig", ['article' => $article]);
     }
+
+    /**
+     * @Route("/article/edit/{id}", name="article_edit")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function editAction(Request $request, $id)
+    {
+        $article = new Article();
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $currentUser = $this->getUser();
+            $article->setAuthor($currentUser);
+            $em = $this->getDoctrine()->getManager();
+            $em->merge($article);
+            $em->flush();
+
+            return $this->redirectToRoute("blog_index");
+        }
+
+
+        return $this->render('article/edit.html.twig', ['form' => $form->createView()]);
+    }
 }
