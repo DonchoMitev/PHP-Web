@@ -42,8 +42,8 @@ class ArticleController extends Controller
      * @param $id
      *
      */
-//    public function viewArticle($id) {
-//       $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
-//        return $this->render("article/article.html.twig", ['article' => $article]);
-//    }
+    public function viewArticle($id) {
+       $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
+        return $this->render("article/article.html.twig", ['article' => $article]);
+    }
 }
